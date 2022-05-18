@@ -1,19 +1,18 @@
 package com.magnuszakariassen.leetcode.easy;
 
+import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
 
 public class ValidParenthesis {
     public static boolean isValid(String s) {
-        Stack<Character> paranthesisStack = new Stack();
+        ArrayDeque<Character> paranthesisStack = new ArrayDeque<>();
         Map<Character, Character> openCloseParanthesesMap = new HashMap<>();
         openCloseParanthesesMap.put('(', ')');
         openCloseParanthesesMap.put('{', '}');
         openCloseParanthesesMap.put('[', ']');
 
-        for (int i = 0; i < s.length(); i++) {
-            Character currentCharacter = s.charAt(i);
+        for (char currentCharacter : s.toCharArray()) {
             if (openCloseParanthesesMap.containsKey(currentCharacter)) {
                 paranthesisStack.push(currentCharacter);
             } else {
