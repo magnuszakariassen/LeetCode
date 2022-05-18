@@ -14,7 +14,7 @@ class ValidParanthesesTest {
     @MethodSource("inputOutput")
     void isValid(String input,
                  boolean expectedResult) {
-        boolean result = ValidParantheses.isValid(input);
+        boolean result = ValidParenthesis.isValid(input);
         assertThat(result).isEqualTo(expectedResult);
     }
 
@@ -25,6 +25,8 @@ class ValidParanthesesTest {
                 Arguments.of("(]", false),
                 Arguments.of("()[}", false),
                 Arguments.of("[)", false),
-                Arguments.of("{[]}", true));
+                Arguments.of("{[]}", true),
+                Arguments.of("((([]{})))", true)
+        );
     }
 }
