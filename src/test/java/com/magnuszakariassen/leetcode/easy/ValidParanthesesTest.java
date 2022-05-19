@@ -14,7 +14,7 @@ class ValidParanthesesTest {
     @MethodSource("inputOutput")
     void isValid(String input,
                  boolean expectedResult) {
-        boolean result = ValidParenthesis.isValid(input);
+        boolean result = ValidParentheses.isValid(input);
         assertThat(result).isEqualTo(expectedResult);
     }
 
